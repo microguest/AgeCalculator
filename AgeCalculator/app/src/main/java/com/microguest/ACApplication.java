@@ -4,15 +4,12 @@ import android.app.Application;
 import android.os.Build;
 import android.os.StrictMode;
 
-import org.androidannotations.annotations.EApplication;
-
 import com.microguest.utils.ACLogger;
 import com.microguest.utils.PropertiesConfig;
 
 /**
  * Created by wuyajun on 15/10/2.
  */
-@EApplication
 public class ACApplication extends Application {
 
     public static ACLogger Logs = ACLogger.kLog();

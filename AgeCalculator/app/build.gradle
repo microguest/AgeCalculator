@@ -1,9 +1,5 @@
 apply plugin: 'com.android.application'
 
-/* 添加注解 */
-apply plugin: 'android-apt'
-def AAVersion = '3.0.1'
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -21,19 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    /* 添加注解 */
-    apt {
-        arguments {
-            androidManifestFile variant.outputs[0].processResources.manifestFile
-            resourcePackageName "com.microguest"
-        }
-    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.1'
-    /* 添加注解 网络 引入 jar */
-    apt "org.androidannotations:androidannotations:3.2"
-    compile "org.androidannotations:androidannotations-api:3.2"
 }
