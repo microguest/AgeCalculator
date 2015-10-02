@@ -1,0 +1,20 @@
+1、在全局 build.gradle - dependencies 中添加
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.2+'
+2、在app build.gradle - 头部 添加
+    apply plugin: 'android-apt'
+    def AAVersion = '3.0.1'
+3、添加 （* 注意outputs[0] 方式为新版方式）
+    apt {
+        arguments {
+            androidManifestFile variant.outputs[0].processResources.manifestFile
+            resourcePackageName "com.microguest.annotations"
+        }
+    }
+4、在dependencies 中添加
+    /* 第一种方式 网络 引入 jar */
+    apt "org.androidannotations:androidannotations:3.2"
+    compile "org.androidannotations:androidannotations-api:3.2"
+
+    /* 第二种方式 本地 引入 jar */
+    //    apt files('compile-lib/androidannotations-3.2.jar')
+    //    compile files('libs/androidannotations-api-3.2.jar')
