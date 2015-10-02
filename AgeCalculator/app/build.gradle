@@ -22,4 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.1.1'
+    compile files('src/main/libs/guice-3.0-no_aop.jar')
+    compile files('src/main/libs/javax.inject-1.jar')
+    compile files('src/main/libs/roboguice-2.0.jar')
 }
